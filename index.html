@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    body{
+        background: linear-gradient(120deg, white, rgb(212, 212, 212));
+        min-height: 100vh;
+    }
+
+    #frm{
+        position: absolute;
+        right: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        top: 40%;
+        width: 400px;
+        height: fit-content;
+        background-color: #ebebebff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 10px;
+        padding-right: 20px;
+        border: 2px solid #ccc;
+    }
+
+    #fakefile{
+        width: 80px;
+        height: 80px;
+        background-color: rgb(188, 72, 255);
+        background-image: url('https://cdn-icons-png.flaticon.com/128/3135/3135715.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 60%;
+        transition: .1s;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    #fakefile:hover{
+        outline: 3px solid rgb(188, 72, 255);
+        outline-offset: 3px;
+    }
+
+    #fakefile::before{
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background-color: rgb(0, 0, 0);
+        z-index: 1;
+        border-radius: 60%;
+        opacity: 0;
+        transition: .15s;
+    }
+
+    #fakefile:hover::before{
+        opacity: .5;
+    }
+
+    #fakefile svg{
+        color: rgb(255, 255, 255);
+        width: 40px;
+        height: 40px;
+        z-index: 99;
+        margin: 20px;
+        opacity: 0;
+        position: relative;
+    }
+
+    #fakefile:hover svg{
+        opacity: 1;
+    }
+
+    #fakefile:active{
+        outline-offset: 6px;
+    }
+
+    #mold{
+        width: 230px;
+        height: 50px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 7px;
+        transform: scale(1.1);
+        transition: .4s;
+        border: 2px solid none;
+        font-family: sans-serif, serif;
+    }
+
+    #mold:hover{
+        border-color: rgba(188, 72, 255, 0.374);
+;
+    }
+
+    #mold #name{
+        width: 100%;
+        height: 40px;
+        margin-left: -10px;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: black;
+        font-size: 18px;
+        line-height: 28px;
+        padding-left: 5px;
+        font-weight: 600;
+    }
+
+
+    #mold p{
+        color: black;
+        margin-right: 15px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: rgb(188, 72, 255);
+        padding: 16px;
+        border-radius: 7px 0px 0px 7px;
+        cursor: default;
+    }
+
+    form{
+        width: 400px;
+        height: fit-content;
+        padding: 20px;
+        background-color: rgba(255, 0, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #submit{
+        width: 130px;
+        height: 130px;
+        position: absolute;
+        right: -155px;
+        border-radius: 10px;
+        background-color: rgb(188, 72, 255);
+        border: none;
+        cursor: pointer;
+        transition: .2s;
+    }
+
+    #submit:hover{
+        opacity: .5;
+    }
+
+    #submit:active{
+        transform: scale(0.9);
+    }
+
+    #submit svg{
+        width: 50px;
+        color: rgb(255, 255, 255);
+    }
+
+    #sign{
+        color: black;
+        position: absolute;
+        width: 533px;
+        right: 50%;
+        left: 50%;
+        transform: translate(-37%, -38%);
+        top: 55%;
+        background-color: #ebebebff;
+        padding: 30px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        border-radius: 12px;
+        font-family: sans-serif, serif;
+        font-weight: 600;
+        letter-spacing: .5px;
+        border: 2px solid #ccc;
+    }
+
+    #sign img{
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+
+    /* Add responsive styles */
+    @media (max-width: 768px) {
+        #frm {
+            width: 90%;
+            padding: 15px;
+            top: 35%;
+        }
+
+        form {
+            width: 100%;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        #submit {
+            position: static;
+            width: 100%;
+            height: 50px;
+            margin-top: 20px;
+        }
+
+        #submit svg {
+            width: 30px;
+        }
+
+        #mold {
+            width: 100%;
+            transform: scale(1);
+        }
+
+        #sign {
+            width: 87%;
+            padding: 40px;
+            transform: translate(-50%, 20px);
+            position: relative;
+            top: 500px;
+            padding: 20px;
+            padding-top: 40px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #frm {
+            top: 30%;
+        }
+
+        #fakefile {
+            width: 70px;
+            height: 70px;
+        }
+
+        #fakefile svg {
+            width: 30px;
+            height: 30px;
+            margin: 20px;
+        }
+
+        #mold #name {
+            font-size: 16px;
+        }
+
+        #sign {
+            width: 85%;
+            font-size: 14px;
+            top: 500px;
+        }
+    }
+</style>
+
+<body>
+    <div id="frm">
+        <form action="create.php" method="post" autocomplete="off" enctype="multipart/form-data">
+            <input type="file" name="img[]" id="file" style="display: none;">
+            <label for="file">
+                <div id="fakefile">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 19">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15h.01M4 12H2a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-3m-5.5 0V1.07M5.5 5l4-4 4 4"/>
+                  </svg>
+            </div></label>
+            <br>
+            <div id="mold">
+                <p>@</p>
+                <input type="text" name="name" id="name" placeholder="username..." required>
+            </div>
+
+            <button type="submit" name="submit" id="submit">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+            </button>
+
+        </form>
+    </div>
+
+    <p id="sign">
+        <img src="   https://cdn-icons-png.flaticon.com/512/3756/3756712.png ">
+        The things that allowed to be in user name is <span style="color: rgb(247, 97, 60);">(letters, numbers, _, .)</span></p>
+
+    <script>
+    function handleFileInputChange() {
+      var input = document.getElementById('file');
+      var preview = document.getElementById('fakefile');
+      
+      // Check if a file is selected
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        // Set up the reader to load the image
+        reader.onload = function (e) {
+          preview.style.backgroundImage = 'url(' + e.target.result + ')';
+          preview.style.backgroundSize = 'cover';
+
+        };
+
+        // Read the image file as a data URL
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    // Attach the handleFileInputChange function to the change event of the file input
+    document.getElementById('file').addEventListener('change', handleFileInputChange);
+    </script>
+</body>
+</html>

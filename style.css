@@ -1,0 +1,299 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(120deg, white, rgb(212, 212, 212));
+    min-height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#profile {
+    max-width: 400px;
+    min-width: 360px;
+    height: auto;
+    margin: 20px auto 100px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 20px;
+    padding: 30px;
+    border: 2px solid #ccc;
+}
+
+#profile #img {
+    width: 180px;
+    height: 180px;
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    margin: 0 auto 20px;
+    position: relative;
+    left: 0;
+    top: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#profile #user {
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    margin-bottom: 5px;
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    font-weight: 500;
+}
+
+#profile #year {
+    color: #00000055;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#profile #bio {
+    color: #1d1d1d;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 15px 0;
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 10px;
+}
+
+#profile #numbers {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 25px 0;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    list-style: none;
+}
+
+#profile #numbers li {
+    text-align: center;
+    color: #2b2b2b;
+    font-size: 14px;
+}
+
+#profile #numbers li span {
+    font-size: 24px;
+    display: block;
+    margin-bottom: -13px;
+}
+
+/* Buttons Styling */
+#btns {
+    display: flex;
+    gap: 15px;
+    padding: 20px 0 0;
+    position: relative;
+    width: 100%;
+    height: auto;
+    list-style: none;
+    justify-content: center;
+    color: #000;
+
+}
+
+.button {
+    width: fit-content;
+    height: 45px;
+    border-radius: 12px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid #ccc;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.button:hover {
+    background-color: #ccc;
+}
+
+.button:active {
+    transform: scale(.85);
+}
+
+.button p {
+    font-size: 15px;
+    font-weight: 600;
+    opacity: 1;
+    display: inline;
+    margin: 0;
+}
+
+/* Navbar Styles */
+.top-bar {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    border-top: #00000037 1px solid;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    max-width: 600px;
+    width: 100%;
+    justify-content: center;
+}
+
+.nav-btn {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    background: #3333332f;
+}
+
+.nav-btn:active{
+    transform: scale(.8);
+}
+
+.nav-btn.active {
+    background: #ff9ff2;
+    color: #ff0000;
+}
+
+.nav-btn.active svg {
+    stroke: #000;
+}
+
+.nav-btn span {
+    font-family: serif;
+    font-size: 14px;
+}
+
+.feed, .wrap, .list, .post-form {
+    margin-top: 70px !important;
+}
+
+#profile {
+    margin-top: 90px !important;
+}
+
+.posts-grid {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.posts-grid h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: left;
+}
+
+.post-item {
+    width: 300px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.post-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.post-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+}
+
+.delete-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.delete-btn:hover {
+    background: #ff4444;
+    color: white;
+}
+
+.no-posts {
+    text-align: center;
+    color: #666;
+    padding: 40px;
+    font-size: 18px;
+}
+
+@media (max-width: 480px) {
+    #profile {
+        min-width: 300px;
+        margin: 10px;
+        padding: 20px;
+    }
+
+    #profile #img {
+        width: 140px;
+        height: 140px;
+    }
+
+    #btns {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+}
+
