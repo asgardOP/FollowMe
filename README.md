@@ -5,7 +5,7 @@ It focuses on the essential features of a social network: user accounts, content
 
 ---
 
-[![Watch the video](https://cdn.loom.com/sessions/thumbnails/00000000000000000000000000000000-with-play.gif)]([https://streamable.com/abc123](https://streamable.com/0b7zew))
+🎥 [Watch the demo on Streamable]([https://streamable.com/abc123](https://streamable.com/0b7zew))
 
 --
 
